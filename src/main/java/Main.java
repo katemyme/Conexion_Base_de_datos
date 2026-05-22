@@ -3,12 +3,16 @@ import modelos.Carrera;
 
 public class Main {
     public static void main(String[] args) {
-        Carrera is = new Carrera(null, "Ingenieria de sistemas ", 250);
 
-        CarreraDao registro = new CarreraDao();
+        CarreraDao dao = new CarreraDao();
 
-        for (Carrera c : registro.listar()){
-            System.out.println(c);
+        // Guardar una carrera
+        Carrera c = new Carrera(1L, "Ingenieria de Sistemas", 250);
+        dao.guardar(c);
+
+        // Listar todas
+        for (Carrera carrera : dao.listar()) {
+            System.out.println(carrera);
         }
     }
 }
