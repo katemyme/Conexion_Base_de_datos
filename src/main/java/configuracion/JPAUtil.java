@@ -1,14 +1,13 @@
 package configuracion;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class JPAUtil {
-    private  static  final EntityManagerFactory emf = Persistence.createEntityManagerFactory("conexion");
+    private  static  final EntityManagerFactory emf = Persistence.createEntityManagerFactory("victor");
 
     public  static EntityManager getEntityManager(){
         return  emf.createEntityManager();
     }
-}
+};

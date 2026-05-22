@@ -15,6 +15,7 @@ public class CarreraDao implements  CRUDinterface<Carrera>{
     @Override
     public List<Carrera> listar() {
         List<Carrera> carreras = new ArrayList<>();
+
         EntityManager em = JPAUtil.getEntityManager();
         try{
             carreras = em.createQuery( "select  c from Carrera c", Carrera.class).getResultList();
@@ -27,8 +28,9 @@ public class CarreraDao implements  CRUDinterface<Carrera>{
     public void guardar(Carrera object) {
         EntityManager em = JPAUtil.getEntityManager();
         try{
-            em.persist(object);
+
             em.getTransaction().begin();
+            em.persist(object);
             em.getTransaction().commit();
 
         }catch (Exception ex){
