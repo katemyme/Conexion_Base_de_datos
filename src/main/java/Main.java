@@ -7,7 +7,7 @@ public class Main {
         CarreraDao dao = new CarreraDao();
 
         // Guardar una carrera
-        Carrera c = new Carrera(1L, "Ingenieria de Sistemas", 250);
+        Carrera c = new Carrera(null, "Ingenieria de Sistemas", 250);
         dao.guardar(c);
 
         // Listar todas

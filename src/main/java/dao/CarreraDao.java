@@ -27,16 +27,15 @@ public class CarreraDao implements  CRUDinterface<Carrera>{
     @Override
     public void guardar(Carrera object) {
         EntityManager em = JPAUtil.getEntityManager();
-        try{
-
+        try {
             em.getTransaction().begin();
             em.persist(object);
             em.getTransaction().commit();
-
-        }catch (Exception ex){
-
+            System.out.println("Guardado exitoso");
+        } catch (Exception ex) {
             em.getTransaction().rollback();
-        }finally {
+            ex.printStackTrace(); // ← esto muestra el error real
+        } finally {
             em.close();
         }
     }
